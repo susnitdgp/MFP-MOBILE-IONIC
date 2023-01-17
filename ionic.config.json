@@ -1,0 +1,7 @@
+{
+  "name": "PRADIP",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
