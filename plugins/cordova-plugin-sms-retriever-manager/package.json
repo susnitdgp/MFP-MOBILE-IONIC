@@ -1,0 +1,62 @@
+{
+  "_from": "cordova-plugin-sms-retriever-manager@0.0.2",
+  "_id": "cordova-plugin-sms-retriever-manager@0.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-q3BlQezA0qS2vsALZgQMtICkKTt/ixuL3ByHnXD/y1496KbRh6h0acVOYi2leMeJV/WdXZXk+OiLwcrOKVTbPQ==",
+  "_location": "/cordova-plugin-sms-retriever-manager",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-sms-retriever-manager@0.0.2",
+    "name": "cordova-plugin-sms-retriever-manager",
+    "escapedName": "cordova-plugin-sms-retriever-manager",
+    "rawSpec": "0.0.2",
+    "saveSpec": null,
+    "fetchSpec": "0.0.2"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-sms-retriever-manager/-/cordova-plugin-sms-retriever-manager-0.0.2.tgz",
+  "_shasum": "7389fabb1d462d9e50964191d59b2658ae1bf41c",
+  "_spec": "cordova-plugin-sms-retriever-manager@0.0.2",
+  "_where": "/workspaces/PRADIP-MOBILE-IONIC/node_modules",
+  "author": {
+    "name": "Haresh Hanat"
+  },
+  "bugs": {
+    "url": "https://github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-sms-retriever-manager",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cross-platform plugin for Cordova / PhoneGap to to easily retrive SMS using Google SMS retriver API. Available for Android.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master",
+  "keywords": [
+    "cordova",
+    "phonegap",
+    "sms",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "DEV",
+  "name": "cordova-plugin-sms-retriever-manager",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master.git"
+  },
+  "version": "0.0.2"
+}

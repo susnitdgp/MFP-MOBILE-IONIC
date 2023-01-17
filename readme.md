@@ -1,3 +1,25 @@
+# Env Setup
+
+Install Node (8)
+nvm install 8.12.0
+$ node --version
+v8.6.0
+
+install cordova
+$ sudo npm install -g cordova@7.0.1
+$ cordova --version
+7.0.1
+
+install ionic
+$ sudo npm install -g ionic@3.19.0
+$ ionic --version
+3.19.0
+
+ionic cordova plugin add cordova-plugin-mfp
+cordova platform add ios
+ionic cordova prepare
+
+
 # Signing steps
 
 1. ionic cordova build --release android
