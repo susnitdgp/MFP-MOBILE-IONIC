@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar mode="ios" hideBackButton>
+    <button
+      ion-button
+      icon-only
+      clear
+      text-capitalize="false"
+      (click)="goToInbox()"
+    >
+      <ion-icon name="arrow-back"></ion-icon> <ion-label>Inbox</ion-label>
+    </button>
+    <ion-title mode="ios">PRADIP Mobile App</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="emtycls"></div>
+  <div class="userprofile">
+    <div class="user-icon"></div>
+
+    <ion-row class="mar-top"
+      ><ion-col>Employee Name:</ion-col
+      ><ion-col
+        >{{userDetails.firstName + " " + userDetails.lastName}}</ion-col
+      ></ion-row
+    >
+    <ion-row
+      ><ion-col>Employee Number:</ion-col
+      ><ion-col>{{userDetails.employeeNumber}}</ion-col></ion-row
+    >
+    <ion-row
+      ><ion-col>Mobile Number:</ion-col
+      ><ion-col>{{userDetails.phoneNumber}}</ion-col></ion-row
+    >
+    <ion-row
+      ><ion-col>Department:</ion-col
+      ><ion-col>{{userDetails.department}}</ion-col></ion-row
+    >
+    <ion-row
+      ><ion-col>Designation:</ion-col
+      ><ion-col>{{userDetails.designation}}</ion-col></ion-row
+    >
+    <ion-row
+      ><ion-col>Plant:</ion-col
+      ><ion-col>{{userDetails.location}}</ion-col></ion-row
+    >
+    <ion-row
+      ><ion-col>E-mail:</ion-col
+      ><ion-col>{{userDetails.email}}</ion-col></ion-row
+    >
+  </div>
+</ion-content>
+<ion-footer text-center class="terms-footer">
+  <ion-label color="primary" (click)="showTermsAndConditions()"
+    >Terms and Conditions</ion-label
+  >
+</ion-footer>

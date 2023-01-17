@@ -1,0 +1,64 @@
+<ion-header class="header-cls">
+  <ion-title>PRADIP Mobile App</ion-title>
+</ion-header>
+<ion-content>
+  <div class="p-logo-div"></div>
+  <div class="user-icon"></div>
+  <div class="login-form">
+    <form [formGroup]="form" (ngSubmit)="processForm()">
+      <ion-list>
+        <ion-item class="login-input">
+          <ion-label floating>
+            <ion-icon name="ios-person-outline"> </ion-icon> Username (six digit
+            emp number)</ion-label
+          >
+          <ion-input formControlName="username" type="text"></ion-input>
+        </ion-item>
+        <ion-item class="login-input">
+          <ion-label floating>
+            <ion-icon name="ios-lock-outline"></ion-icon> Password</ion-label
+          >
+          <button
+            class="view-hide-password"
+            ion-button
+            item-end
+            clear
+            icon-only
+            color="light"
+            type="button"
+            (click)="togglePasswordInputType(passwordInput)"
+          >
+            <ion-icon
+              name="eye"
+              *ngIf="passwordInputType == 'password'"
+            ></ion-icon>
+            <ion-icon
+              name="eye-off"
+              *ngIf="passwordInputType == 'text'"
+            ></ion-icon>
+          </button>
+          <ion-input
+            #passwordInput
+            formControlName="password"
+            type="{{passwordInputType}}"
+            clearOnEdit="false"
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+      <div padding>
+        <button
+          color="light"
+          class="light-button"
+          ion-button
+          block
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+  <ion-row justify-content-center>
+    <button ion-button clear color="light" text-capitalize="false" (click)="showContactUsPopup()">Contact Us</button>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,48 @@
+page-dashboard {
+  .light-header {
+    background-color: white !important;
+  }
+
+  .files-chart {
+    margin-top: 10px;
+  }
+  ion-card {
+    width: 100%;
+    min-height: 75%;
+    ion-card-content {
+      height: 100%;
+      width: 100%;
+      padding: 10% 0 0 0 !important;
+    }
+  }
+  .select-employee {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+  canvas {
+    margin-bottom: 25px;
+  }
+  ion-grid {
+    width: 80% !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .clickable {
+    text-decoration: underline;
+    color: color($colors, primary, base);
+  }
+  .help-text {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .date-filter {
+    width: 95%;
+  }
+
+  .dashboard-chart-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

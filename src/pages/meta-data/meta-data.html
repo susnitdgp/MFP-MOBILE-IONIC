@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar mode="ios" hideBackButton>
+    <button
+      ion-button
+      icon-only
+      clear
+      text-capitalize="false"
+      (click)="goToInbox()"
+    >
+      <ion-icon name="arrow-back"></ion-icon> <ion-label>Inbox</ion-label>
+    </button>
+    <ion-title mode="ios">Meta Data</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="contentcls">
+    <p>{{taskDetails.displayName}}</p>
+    <ul class="listcls" *ngIf="metaData">
+      <li>File Number: {{metaData.fileNumber? metaData.fileNumber: ""}}</li>
+      <li>File Subject: {{metaData.fileSubject? metaData.fileSubject: ""}}</li>
+      <li>
+        File Category: {{metaData.fileCategory? metaData.fileCategory: ""}}
+      </li>
+      <li>
+        Priority of File: {{metaData.filePriority? metaData.filePriority: ""}}
+      </li>
+      <li>
+        Target Date: {{metaData.fileTargetDate | date: "dd/MM/yyyy HH:mm" }}
+      </li>
+
+      <li
+        *ngIf="taskVariables.DOP_Route_VerifiedBy && taskVariables.DOP_Route_VerifiedBy != 'none'"
+      >
+        DOP and File Routing Verified By: {{taskVariables.DOP_Route_VerifiedBy}}
+      </li>
+
+      <li *ngIf="metaData.DOP_Applicable">
+        DOP: {{metaData.DOP_Applicable}}
+      </li>
+
+      <ion-label
+        class="dop-reason"
+        *ngIf=" metaData.DOP_Applicable == 'No' && metaData.DOP_Reason"
+        >{{metaData.DOP_Reason}}</ion-label
+      >
+
+      <ion-grid class="dop-table" *ngIf="metaData.DOP_Applicable == 'Yes'">
+        <ion-row>
+          <ion-col col-3>Clause</ion-col>
+          <ion-col col-3>Approving Authority</ion-col>
+          <ion-col col-3>Added By</ion-col>
+          <ion-col col-3></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let item of metaData.selectedDOP.items">
+          <ion-col col-3>{{item.showDOP}}</ion-col>
+          <ion-col col-3>{{item.approvingAuthority}}</ion-col>
+          <ion-col col-3>{{item.addedBy}}</ion-col>
+          <ion-col col-3 align-content-center>
+            <button ion-button small primary round (click)="showDOP(item)">
+              View
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ul>
+  </div>
+</ion-content>

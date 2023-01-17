@@ -1,0 +1,46 @@
+page-terms-and-conditions {
+  h2 {
+    color: #fff;
+    font-size: 20px;
+    ion-icon {
+      margin: 10px;
+    }
+  }
+  .terms-main {
+    width: 100%;
+    height: 75vh;
+    padding: 10px;
+    background: #fff;
+    overflow: auto;
+    margin: 0 0 10px 0;
+  }
+  .terms-btns {
+    width: 100%;
+    .btn-disagree-cls {
+      width: 46%;
+      float: left;
+    }
+    .btn-agree-cls {
+      width: 46%;
+      float: right;
+    }
+  }
+
+  .terms-main::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+    background-color: rgb(238, 238, 238);
+    /* or add it to the track */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #29a1e3;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #29a1e3;
+  }
+
+  .button-outline-ios,
+  .button-outline-md {
+    background-color: #fff !important;
+  }
+}

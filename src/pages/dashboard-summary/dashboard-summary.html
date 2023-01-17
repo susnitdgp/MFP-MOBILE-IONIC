@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-navbar mode="ios">
+    <ion-title mode="ios">{{pageTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <accordion *ngFor="let file of files" [data]="file.fileSubject">
+      <ion-row>
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>File Subject:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.fileSubject}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>File Number:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.fileNumber}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dashboardType == 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>Process Name:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.fileInstanceName}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dashboardType == 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>Initiated Date:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap
+            >{{file.fileCreatedOn | date: "dd/MM/yyyy HH:mm"}}</ion-label
+          >
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dashboardType == 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>
+            {{params.fileStatus == "Cleared" ? "Cleared On:" : "Received On:"}}
+          </ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap
+            >{{file.fileActionOn | date: "dd/MM/yyyy HH:mm"}}</ion-label
+          >
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="dashboardType == 'task' && params.fileStatus == 'Cleared'"
+      >
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>
+            Sent To:
+          </ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.sentTo}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row
+        *ngIf="dashboardType == 'task' && params.fileStatus != 'Cleared'"
+      >
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>
+            Sent By:
+          </ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.sentBy}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="dashboardType != 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>Status:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.fileStatus}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dashboardType != 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>Initiated By:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.initiatedBy}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dashboardType != 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>Initiated Date:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap
+            >{{file.initiatedDate | date: "dd/MM/yyyy HH:mm"}}</ion-label
+          >
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dashboardType != 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>Last Action Taken:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.lastActionTaken}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dashboardType != 'task'">
+        <ion-col col-4>
+          <ion-label class="tblhed" text-wrap>Current Owner:</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-label text-wrap>{{file.currentOwner}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </accordion>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

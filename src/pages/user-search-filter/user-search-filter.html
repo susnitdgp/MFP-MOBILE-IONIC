@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-segment
+      [(ngModel)]="selectedFilter"
+      color="primary"
+      (ionChange)="onSegmentChange()"
+    >
+      <ion-segment-button value="plantCode">
+        PLANT CODE
+      </ion-segment-button>
+      <ion-segment-button value="department">
+        DEPARTMENT
+      </ion-segment-button>
+      <ion-segment-button value="designation">
+        DESIGNATION
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf="selectedFilter == 'plantCode'">
+    <ion-list radio-group no-lines [(ngModel)]="filters.selectedPlant">
+      <ion-item *ngFor="let plant of plants">
+        <ion-radio mode="md" item-left [value]="plant"></ion-radio>
+        <ion-label>{{plant}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+  <ng-container *ngIf="selectedFilter == 'department'">
+    <ion-list radio-group no-lines [(ngModel)]="filters.selectedDepartment">
+      <ion-item *ngFor="let department of departments">
+        <ion-radio mode="md" item-left [value]="department"></ion-radio>
+        <ion-label>{{department}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+  <ng-container *ngIf="selectedFilter == 'designation'">
+    <ion-list radio-group no-lines [(ngModel)]="filters.selectedDesignation">
+      <ion-item *ngFor="let designation of designations">
+        <ion-radio mode="md" item-left [value]="designation"></ion-radio>
+        <ion-label>{{designation}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+</ion-content>
+<ion-footer color="light" ion-row justify-content-end>
+  <button ion-button round color="danger" (click)="clearFilter()">
+    Clear
+  </button>
+  <button ion-button round color="primary" (click)="applyFilter()">
+    Apply
+  </button>
+</ion-footer>

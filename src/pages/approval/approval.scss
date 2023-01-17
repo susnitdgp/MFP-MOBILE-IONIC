@@ -1,0 +1,21 @@
+page-approval {
+  .page-content {
+    width: 100%;
+    min-height: 75vh;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    .comment-box {
+      padding: 10px !important;
+      .item-inner {
+        padding-right: 0 !important;
+      }
+      ion-textarea {
+        border: 1px solid #0067ac;
+      }
+    }
+  }
+  .error-message {
+    padding: 10px;
+  }
+}

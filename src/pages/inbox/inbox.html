@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar mode="ios">
+    <ion-title text-center mode="ios">
+      PRADIP Mobile App
+    </ion-title>
+    <button
+      ion-button
+      icon-only
+      color="danger"
+      text-right
+      clear
+      class="logout-button"
+      (click)="logout()"
+    >
+      <ion-icon name="power"></ion-icon>
+    </button>
+  </ion-navbar>
+
+  <ion-row align-items-center>
+    <ion-col>
+      <ion-row align-items-center>
+        <button ion-button icon-only clear (click)="showUserProfile()">
+          <ion-icon name="contact"></ion-icon>
+        </button>
+        <ion-label class="wlcomcls"
+          >Welcome,<br />
+          {{authenticatedUser? authenticatedUser.displayName: ""}}</ion-label
+        >
+      </ion-row>
+    </ion-col>
+
+    <button class="dashboard-button" ion-button (click)="goToDashBoard()">
+      Dashboard
+    </button>
+  </ion-row>
+  <ion-row justify-content-between class="headerrowcls">
+    <ion-col ion-item class="selctcls" col-3>
+      <ion-select
+        *ngIf="senders.length > 1"
+        placeholder="Sent By"
+        [(ngModel)]="filterBySenderValue"
+        (ionChange)="filterBySender()"
+        cancelText="Clear"
+        (ionCancel)="clearFilters()"
+      >
+        <ion-option *ngFor="let sender of senders" [value]="sender">
+          {{sender}}
+        </ion-option>
+      </ion-select>
+    </ion-col>
+    <ion-col col-7>
+      <h3>
+        Office Note - Inbox({{inboxCount}})
+      </h3>
+    </ion-col>
+    <ion-col col-2>
+      <div
+        class="sorting-arrows"
+        (click)="reverseSort()"
+        *ngIf="tasksUICopy.length > 1"
+      >
+        <span class="up-arrow"><img [src]="sortArrows.up"/></span>
+        <span class="down-arrow"><img [src]="sortArrows.down"/></span>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="refreshTasks($event)"> </ion-refresher>
+
+  <ion-row text-center *ngIf="!tasksUICopy.length">
+    <ion-label>{{tasksEmptyText}}</ion-label>
+  </ion-row>
+
+  <ion-list>
+    <ion-item *ngFor="let task of tasksUICopy" (click)="showTaskDetails(task)">
+      <p class="txt-right datecls">
+        {{task.ACTIVATED | date: "dd/MM/yyyy HH:mm"}}
+      </p>
+      <h5>{{task.PI_NAME}}</h5>
+      <p>{{task.TAD_DISPLAY_NAME}}</p>
+      <p>{{task.BDFILE_NUMBER}}</p>
+
+      <p class="txt-right">Sent By: {{task.BD_SENT_BY}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadTasks($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more tasks..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

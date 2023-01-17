@@ -1,0 +1,21 @@
+page-forward {
+  .contentcls {
+    width: 100%;
+    min-height: 75vh;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    ion-item {
+      .item-inner {
+        padding-right: 0 !important;
+      }
+      textarea {
+        border: 1px solid #449abc;
+        padding: 5px;
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+}

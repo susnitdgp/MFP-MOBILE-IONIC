@@ -1,0 +1,22 @@
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+  &[class*="custom-meta-data"] {
+    mask-image: url(/assets/icon/meta-data.svg);
+  }
+  &[class*="custom-files"] {
+    mask-image: url(/assets/icon/file.svg);
+  }
+  &[class*="custom-action-history"] {
+    mask-image: url(/assets/icon/action-history.svg);
+  }
+  &[class*="custom-approval"] {
+    mask-image: url(/assets/icon/approval.svg);
+  }
+}

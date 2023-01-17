@@ -1,0 +1,36 @@
+page-user-profile {
+  .emtycls {
+    width: 100%;
+    height: 23vh;
+    background: #fff;
+  }
+  .userprofile {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    .user-icon {
+      width: 86px;
+      height: 86px;
+      background: url(../../assets/imgs/user-icon.png) no-repeat center bottom
+        color($colors, primary, base);
+
+      margin: 0 auto;
+      border: 3px solid #fff;
+      border-radius: 100%;
+      margin-top: -42px;
+    }
+    ion-col {
+      margin: 0 0 20px 0;
+      padding: 0;
+      color: #fff;
+      font-size: 17px;
+    }
+    .mar-top {
+      margin-top: 50px;
+    }
+  }
+  .terms-footer {
+    background-color: color($colors, light, base);
+  }
+}

@@ -1,0 +1,62 @@
+page-files {
+  .contentcls {
+    width: 100%;
+    height: 75vh;
+    background: url(../../assets/imgs/content-bootm-bg.png) repeat-x left bottom
+      #fff;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .listcls {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      li {
+        padding: 10px 20px;
+        background: #0076a3;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        color: #fff;
+        margin: 0 0 20px 0;
+      }
+    }
+    .list2 {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      li {
+        width: 100%;
+        padding: 8px 12px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #0084bd;
+        float: left;
+        vertical-align: middle;
+        margin: 0 0 10px 0;
+        button {
+          padding: 8px 12px;
+          border-radius: 20px;
+          background: #0084bd;
+          color: #fff;
+          float: right;
+        }
+        span {
+          margin: 6px 0 0 0;
+          float: left;
+        }
+        .no-annexures {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+  .mar-top {
+    margin-top: 20px !important;
+  }
+  .tex-center {
+    text-align: center;
+  }
+}

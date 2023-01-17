@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar mode="ios" hideBackButton>
+    <button ion-button icon-only clear *ngIf="!showButtons" (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-title text-center mode="ios">
+      PRADIP Mobile App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h2><ion-icon name="list-box"></ion-icon> Terms And Conditions</h2>
+  <div class="terms-main">
+    <p [innerHTML]="termsAndConditions"></p>
+  </div>
+  <div class="terms-btns" *ngIf="showButtons">
+    <button
+      class="btn-disagree-cls"
+      color="danger"
+      outline
+      ion-button
+      (click)="updateUserConcent(false)"
+    >
+      Disagree
+    </button>
+    <button
+      class="btn-agree-cls"
+      color="primary"
+      outline
+      ion-button
+      (click)="updateUserConcent(true)"
+    >
+      I Agree
+    </button>
+  </div>
+</ion-content>

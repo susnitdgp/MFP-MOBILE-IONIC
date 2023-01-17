@@ -1,0 +1,27 @@
+<!-- https://medium.com/@alexandrubereghici/ionic-the-easy-and-the-right-way-to-add-custom-icons-b15330a2173b -->
+<ion-tabs tabsPlacement="top">
+  <ion-tab
+    [root]="metaDataRoot"
+    [rootParams]="taskDetails"
+    tabTitle="Meta data"
+    tabIcon="custom-meta-data"
+  ></ion-tab>
+  <ion-tab
+    [root]="filesRoot"
+    tabTitle="Files"
+    [rootParams]="taskDetails"
+    tabIcon="custom-files"
+  ></ion-tab>
+  <ion-tab
+    [root]="actionHistoryRoot"
+    tabTitle="Action history"
+    [rootParams]="taskDetails"
+    tabIcon="custom-action-history"
+  ></ion-tab>
+  <ion-tab
+    [root]="approvalRoot"
+    tabTitle="Action"
+    [rootParams]="{taskDetails: taskDetails, empNo: empNo, taskId: taskId, oldTaskMessage: oldTaskMessage, isApprovedFile: isApprovedFile}"
+    tabIcon="custom-approval"
+  ></ion-tab>
+</ion-tabs>

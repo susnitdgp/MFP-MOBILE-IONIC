@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar mode="ios" hideBackButton>
+    <button
+      ion-button
+      icon-only
+      clear
+      text-capitalize="false"
+      (click)="goToInbox()"
+    >
+      <ion-icon name="arrow-back"></ion-icon> <ion-label>Inbox</ion-label>
+    </button>
+    <ion-title mode="ios">Files</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="contentcls">
+    <ul class="listcls ">
+      <li class="mar-top">
+        Note sheet
+        <button
+          class="viewsheet"
+          (click)="getDocumentContent(noteSheetId, 'notesheet', 'application/pdf')"
+        >
+          View note sheet
+        </button>
+      </li>
+    </ul>
+    <ul class="listcls ">
+      <li class="mar-top tex-center">Annexure(s) List</li>
+    </ul>
+    <ul class="list2">
+      <li *ngIf="!annexures.length">
+        <span class="no-annexures">No annexures attached</span>
+      </li>
+      <li *ngFor="let annexure of annexures">
+        <span>{{annexure.name}}</span>
+        <button
+          (click)="getDocumentContent(annexure.id, annexure.name, annexure.mimeType)"
+        >
+          View
+        </button>
+      </li>
+    </ul>
+  </div>
+</ion-content>

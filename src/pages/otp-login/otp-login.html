@@ -1,0 +1,90 @@
+<ion-header class="header-cls">
+  <ion-title>PRADIP Mobile App</ion-title>
+</ion-header>
+
+<ion-content>
+  <div class="p-logo-div"></div>
+
+  <div class="otp-main">
+    <button class="close-icon" ion-button clear icon-only (click)="goBack()">
+      <ion-icon name="ios-close-circle-outline"></ion-icon>
+    </button>
+    <ion-label>Please Enter Your OTP</ion-label>
+    <ion-row justify-content-center>
+      <ion-label>{{timerText}}</ion-label>
+    </ion-row>
+    <form [formGroup]="otpForm" (ngSubmit)="validateOTP(false)">
+      <ion-row align-items-between>
+        <ion-col ion-item no-lines>
+          <ion-input
+            class="otp-input"
+            text-center
+            #otp1
+            formControlName="otp1"
+            [(ngModel)]="otp[0]"
+            maxlength="1"
+            type="tel"
+            (keyup)="otpInputController($event,otp2,'')"
+          ></ion-input>
+        </ion-col>
+        <ion-col ion-item no-lines>
+          <ion-input
+            class="otp-input"
+            text-center
+            #otp2
+            formControlName="otp2"
+            [(ngModel)]="otp[1]"
+            maxlength="1"
+            type="tel"
+            (keyup)="otpInputController($event,otp3,otp1)"
+          ></ion-input>
+        </ion-col>
+        <ion-col ion-item no-lines>
+          <ion-input
+            class="otp-input"
+            text-center
+            #otp3
+            formControlName="otp3"
+            [(ngModel)]="otp[2]"
+            maxlength="1"
+            type="tel"
+            (keyup)="otpInputController($event,otp4,otp2)"
+          ></ion-input>
+        </ion-col>
+        <ion-col ion-item no-lines>
+          <ion-input
+            class="otp-input"
+            text-center
+            #otp4
+            formControlName="otp4"
+            [(ngModel)]="otp[3]"
+            maxlength="1"
+            type="tel"
+            (keyup)="otpInputController($event,'',otp3)"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <button
+        class="marg-top20 light-button"
+        color="light"
+        ion-button
+        block
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+    <button
+      *ngIf="numberOfResendOTPTries < 2"
+      class="marg-top20 light-button"
+      color="light"
+      ion-button
+      block
+      [disabled]="disableButtons"
+      (click)="resendOTP()"
+    >
+      {{resendOTPButtonText}}
+    </button>
+  </div>
+</ion-content>

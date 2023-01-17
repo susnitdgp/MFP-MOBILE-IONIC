@@ -1,0 +1,9 @@
+page-task-details {
+  .tab-button[aria-selected="true"] {
+    background-color: #014778;
+  }
+
+  .tab-button {
+    background-color: color($colors, primary, base);
+  }
+}

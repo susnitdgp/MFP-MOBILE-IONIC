@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar mode="ios" hideBackButton>
+    <button
+      ion-button
+      icon-only
+      clear
+      text-capitalize="false"
+      (click)="goToInbox()"
+    >
+      <ion-icon name="arrow-back"></ion-icon> <ion-label>Inbox</ion-label>
+    </button>
+    <ion-title mode="ios">Action History</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <accordion *ngFor="let action of actionHistory" [data]="action.actionBy">
+    <!-- <ion-row>
+      <ion-col col-4>
+        <ion-label class="tblhed" text-wrap>Task Name:</ion-label>
+      </ion-col>
+      <ion-col col-8>
+        <ion-label text-wrap>{{action.taskName}}</ion-label>
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col col-4>
+        <ion-label class="tblhed" text-wrap>Sent To:</ion-label>
+      </ion-col>
+      <ion-col col-8>
+        <ion-label text-wrap>{{action.actionTo}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <ion-label class="tblhed" text-wrap>Sent On:</ion-label>
+      </ion-col>
+      <ion-col col-8>
+        <ion-label text-wrap>
+          {{action.actionOn | date: "dd/MM/yyyy HH:mm"}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <ion-label class="tblhed" text-wrap>Action Taken:</ion-label>
+      </ion-col>
+
+      <ion-col col-8>
+        <ion-label text-wrap>{{action.action}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col col-4>
+        <ion-label class="tblhed" text-wrap>Action Comments:</ion-label>
+      </ion-col>
+      <ion-col col-8>
+        <ion-label text-wrap>{{action.actionComments}}</ion-label>
+      </ion-col>
+    </ion-row> -->
+  </accordion>
+</ion-content>
