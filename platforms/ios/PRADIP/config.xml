@@ -89,14 +89,15 @@
         </mfp:windows10>
         <mfp:appChecksum>0</mfp:appChecksum>
     </mfp:windows>
-    <mfp:platformVersion>8.0.0.00-20200322-152731</mfp:platformVersion>
+    <mfp:platformVersion>8.0.0.00-20220920-051950</mfp:platformVersion>
     <mfp:clientCustomInit enabled="false" />
     <access origin="https://mpradip.ntpc.co.in/*" />
-    <mfp:server runtime="mfp" url="http://10.3.0.134" />
+    <mfp:server runtime="mfp" url="https://mpradip.ntpc.co.in" />
     <mfp:directUpdateAuthenticityPublicKey />
     <mfp:languagePreferences>en</mfp:languagePreferences>
     <mfp:APIproxyURL>/adapters/MobileAPIProxy</mfp:APIproxyURL>
     <mfp:serverUri url="" />
+    <mfp:SDKProtocolVersion>2</mfp:SDKProtocolVersion>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />

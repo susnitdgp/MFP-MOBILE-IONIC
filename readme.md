@@ -16,7 +16,9 @@ $ ionic --version
 3.19.0
 
 ionic cordova plugin add cordova-plugin-mfp
+
 cordova platform add ios
+
 ionic cordova prepare
 
 
