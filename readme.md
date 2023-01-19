@@ -17,8 +17,11 @@ $ ionic --version
 
 ionic cordova plugin add cordova-plugin-mfp
 
-cordova platform add ios
+# Cordova Runtime
+cordova platform list
+cordova platform add/remove ios/android
 
+# For preparing Source
 ionic cordova prepare
 
 

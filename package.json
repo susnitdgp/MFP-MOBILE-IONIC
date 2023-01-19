@@ -30,8 +30,8 @@
         "@ionic/storage": "2.2.0",
         "chart.js": "^2.9.3",
         "chart.piecelabel.js": "^0.15.0",
-        "cordova-android": "^8.1.0",
-        "cordova-ios": "^5.1.1",
+        "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-device": "^2.1.0",
         "cordova-plugin-dialogs": "^2.0.2",
         "cordova-plugin-document-viewer": "^0.9.11",
@@ -79,9 +79,6 @@
                 "PLAY_SERVICES_VERSION": "15.0.1"
             }
         },
-        "platforms": [
-            "android",
-            "ios"
-        ]
+        "platforms": []
     }
 }

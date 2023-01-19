@@ -147,8 +147,6 @@
     <mfp:APIproxyURL>/adapters/MobileAPIProxy</mfp:APIproxyURL>
     <mfp:serverUri url="" />
     <mfp:SDKProtocolVersion>2</mfp:SDKProtocolVersion>
-    <engine name="android" spec="^8.1.0" />
-    <engine name="ios" spec="^5.1.1" />
     <plugin name="cordova-plugin-device" spec="^2.1.0" />
     <plugin name="cordova-plugin-document-viewer" spec="^0.9.11" />
     <plugin name="cordova-plugin-file" spec="^6.0.2" />
