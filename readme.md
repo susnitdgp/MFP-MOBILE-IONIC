@@ -2,6 +2,11 @@
 
 Install Node (8)
 nvm install 8.12.0
+
+# NVM Use
+nvm ls
+nvm use v8.12.0
+
 $ node --version
 v8.6.0
 
