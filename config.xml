@@ -141,7 +141,7 @@
     <mfp:platformVersion>8.0.0.00-20220920-051950</mfp:platformVersion>
     <mfp:clientCustomInit enabled="false" />
     <access origin="https://mpradip.ntpc.co.in/*" />
-    <mfp:server runtime="mfp" url="https://mpradip.ntpc.co.in" />
+    <mfp:server runtime="mfp" url="https://mpradip.ntpc.co.in:443" />
     <mfp:directUpdateAuthenticityPublicKey />
     <mfp:languagePreferences>en</mfp:languagePreferences>
     <mfp:APIproxyURL>/adapters/MobileAPIProxy</mfp:APIproxyURL>
